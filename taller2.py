@@ -119,4 +119,41 @@ def convert(number, result=""):
     return result
 
 
-# EJERCICIO 6
+# EJERCICIO 6 - Scrabble Score
+# Con una palabra, calcule la puntuación de scrabble para esa palabra.
+# Letter                           Value
+# A, E, I, O, U, L, N, R, S, T       1
+# D, G                               2
+# B, C, M, P                         3
+# F, H, V, W, Y                      4
+# K                                  5
+# J, X                               8
+# Q, Z                               10
+def score(word, puntaje=0):
+    """
+    Este Metodo calcula un puntaje para una palabra, tomando puntos por letras
+    Parameters
+    word : palabra a calcular puntaje
+    Returns
+    retorna el puntaje de la palabra ingresada
+    """
+
+    for le in word.lower():
+        if le in "aeioulnrst":
+            puntaje = puntaje + 1
+        if le in "dg":
+            puntaje = puntaje + 2
+        if le in "bcmp":
+            puntaje = puntaje + 3
+        if le in "fhvwy":
+            puntaje = puntaje + 4
+        if le in "k":
+            puntaje = puntaje + 5
+        if le in "jx":
+            puntaje = puntaje + 8
+        if le in "qz":
+            puntaje = puntaje + 10
+    return puntaje
+
+
+# EJERCICIO 7
