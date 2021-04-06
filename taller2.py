@@ -8,23 +8,7 @@ Created on Mon Apr  5 17:49:01 2021
 # TALLER DE EXCERISM - CORTE 2
 
 
-# EJERCICIO 1 - Two Fer
-# Dado un nombre, devuelva una cadena con el mensaje: One for X, one for me.
-# Donde X es el nombre dado.
-# ‎Si falta el nombre, devuelva el st‎ring: One for you, one for me.
-def two_fer(name="you"):
-    """
-    El metodo regresa una oración con el nombre ingresado
-    Parameters
-    ----------
-    name = nombre ingresado
-    Returns
-    retorna la oración concatenada con el nombre ingresado
-    """
-    return f'One for {name}, one for me.'
-
-
-# EJERCICIO 2 - Isogram
+# EJERCICIO 1 - Isogram
 # Determine si una palabra o frase es un isograma.
 def is_isogram(string):
     """
@@ -46,7 +30,7 @@ def is_isogram(string):
     return True
 
 
-# EJERCICIO 3 - Acronym
+# EJERCICIO 2 - Acronym
 # Convierte una frase en su acrónimo.
 def abbreviate(words, acronimo=""):
     """
@@ -66,7 +50,7 @@ def abbreviate(words, acronimo=""):
     return acronimo
 
 
-# EJERCICIO 4 - Hamming
+# EJERCICIO 3 - Hamming
 # Calcula la diferencia de Hamming entre dos hebras de ADN.
 def distance(strand_a, strand_b, distancia=0):
     """
@@ -90,7 +74,7 @@ def distance(strand_a, strand_b, distancia=0):
     return distancia
 
 
-# EJERCICIO 5 - Raindrops
+# EJERCICIO 4 - Raindrops
 # Convierta un número en una cadena que depende de los factores del número.
 # Si el número tiene 3 como factor, salida 'Pling'.
 # Si el número tiene 5 como factor, salida 'Plang'.
@@ -119,7 +103,7 @@ def convert(number, result=""):
     return result
 
 
-# EJERCICIO 6 - Scrabble Score
+# EJERCICIO 5 - Scrabble Score
 # Con una palabra, calcule la puntuación de scrabble para esa palabra.
 # Letter                           Value
 # A, E, I, O, U, L, N, R, S, T       1
@@ -156,7 +140,7 @@ def score(word, puntaje=0):
     return puntaje
 
 
-# EJERCICIO 7 Pangram
+# EJERCICIO 6 Pangram
 # Determine si una oración es un pangrama.
 def es_pangrama(cadena):
     import string
@@ -168,7 +152,7 @@ def es_pangrama(cadena):
     return True
 
 
-# EJERCICIO 8 - Accumulate
+# EJERCICIO 7 - Accumulate
 # Determinar correctamente el menor número de monedas que se deben dar a un
 # cliente de tal forma que la suma del valor de las monedas equivaldría
 # a la cantidad correcta de cambio.
@@ -185,3 +169,19 @@ def vueltasRec(listaValoresMonedas, vueltas):
 
 
 print(vueltasRec([1, 5, 10, 25], 63))
+
+# EJERCICIO 8 - Sieve
+# Utilice el Tamiz de Eratosthenes para encontrar todos los primos
+# de 2 a un número dado.
+pp = 2
+ps = [pp]
+lim = raw_input("Generate prime numbers up to what number? : ")
+    while pp < int(lim):
+        pp += 1
+        for a in ps:
+            if a*a > pp:
+                ps.append(pp)
+                break
+            if pp % a == 0:
+                break
+# EJERCICIO 9
