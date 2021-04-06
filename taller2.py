@@ -88,3 +88,35 @@ def distance(strand_a, strand_b, distancia=0):
                 distancia += 1
 
     return distancia
+
+
+# EJERCICIO 5 - Raindrops
+# Convierta un número en una cadena que depende de los factores del número.
+# Si el número tiene 3 como factor, salida 'Pling'.
+# Si el número tiene 5 como factor, salida 'Plang'.
+# Si el número tiene 7 como factor, salida 'Plong'.
+# Si el número no tiene 3, 5 o 7 como factor,
+# simplemente pase los dígitos del número directamente a través.
+def convert(number, result=""):
+    """
+    El metodo convierte un número en una cadena que contenga sonidos de gotas
+    de lluvias correspondientes a factores potenciales.
+    Parameters
+    ----------
+    number = numero a convertir.
+    Returns
+    Retorna una cadena de PlingPlongPlang o en su caso el mismo número
+    """
+
+    if number % 3 == 0:
+        result = result + "Pling"
+    if number % 5 == 0:
+        result = result + "Plang"
+    if number % 7 == 0:
+        result = result + "Plong"
+    if number % 3 != 0 and number % 5 != 0 and number % 7 != 0:
+        result = f"{number}"
+    return result
+
+
+# EJERCICIO 6
