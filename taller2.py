@@ -166,3 +166,22 @@ def es_pangrama(cadena):
         if letra not in cadena:
             return False
     return True
+
+
+# EJERCICIO 8 - Accumulate
+# Determinar correctamente el menor número de monedas que se deben dar a un
+# cliente de tal forma que la suma del valor de las monedas equivaldría
+# a la cantidad correcta de cambio.
+def vueltasRec(listaValoresMonedas, vueltas):
+    minMonedas = vueltas
+    if vueltas in listaValoresMonedas:
+        return 1
+    else:
+        for i in [m for m in listaValoresMonedas if m <= vueltas]:
+            numeroMonedas = 1 + vueltasRec(listaValoresMonedas, vueltas-i)
+            if numeroMonedas < minMonedas:
+                minMonedas = numeroMonedas
+                return minMonedas
+
+
+print(vueltasRec([1, 5, 10, 25], 63))
