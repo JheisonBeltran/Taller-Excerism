@@ -7,28 +7,42 @@ Created on Mon Apr  5 17:49:01 2021
 
 # TALLER DE EXCERISM - CORTE 2
 
+
 # EJERCICIO 1 - Two Fer
 # Dado un nombre, devuelva una cadena con el mensaje: One for X, one for me.
 # Donde X es el nombre dado.
 # ‎Si falta el nombre, devuelva el st‎ring: One for you, one for me.
-
-import unittest
-
-from two_fer import two_fer
-
-
-class TwoFerTest(unittest.TestCase):
-    def test_no_name_given(self):
-        self.assertEqual(two_fer(), "One for you, one for me.")
-
-    def test_a_name_given(self):
-        self.assertEqual(two_fer("Leonela"), "One for Leonela, one for me.")
-
-    def test_another_name_given(self):
-        self.assertEqual(two_fer("Jorge"), "One for Jorge, one for me.")
+def two_fer(name="you"):
+    """
+    El metodo regresa una oración con el nombre ingresado
+    Parameters
+    ----------
+    name = nombre ingresado
+    Returns
+    retorna la oración concatenada con el nombre ingresado
+    """
+    return f'One for {name}, one for me.'
 
 
-if __name__ == "__main__":
-    unittest.main()
+# EJERCICIO 2 - Isogram
+# Determine si una palabra o frase es un isograma.
+def is_isogram(string):
+    """
+    El Metodo indica si una palabra es un isograma o no lo es.
 
+    Parameters
+    ----------
+    string : Palabra a definir
 
+    Returns
+    Retorna un true si la palabra es un isograma o false si no lo es.
+    """
+    string = string.lower()
+    for x in range(len(string)):
+        for i in range(len(string)):
+            if x != i and string[x] == string[i] and string[x].isalpha():
+                return False
+
+    return True
+
+# EJERCICIO 3
