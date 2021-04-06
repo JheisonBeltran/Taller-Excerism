@@ -175,7 +175,7 @@ print(vueltasRec([1, 5, 10, 25], 63))
 # de 2 a un número dado.
 pp = 2
 ps = [pp]
-lim = raw_input("Generate prime numbers up to what number? : ")
+lim = raw_input("Quieres generar números primos hasta qué número: ")
     while pp < int(lim):
         pp += 1
         for a in ps:
@@ -184,4 +184,17 @@ lim = raw_input("Generate prime numbers up to what number? : ")
                 break
             if pp % a == 0:
                 break
-# EJERCICIO 9
+
+
+# EJERCICIO 9 - Binary
+#
+def binarizar(decimal):
+    binario = ''
+    while decimal // 2 != 0:
+        binario = str(decimal % 2) + binario
+        decimal = decimal // 2
+        return str(decimal) + binario
+
+
+numero = int(input('Ingresar el número a convertir a número binario: '))
+print(binarizar(numero))
