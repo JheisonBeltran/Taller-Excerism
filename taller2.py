@@ -156,4 +156,13 @@ def score(word, puntaje=0):
     return puntaje
 
 
-# EJERCICIO 7
+# EJERCICIO 7 Pangram
+# Determine si una oración es un pangrama.
+def es_pangrama(cadena):
+    import string
+    cadena = cadena.lower()
+    alfabeto = string.ascii_lowercase
+    for letra in alfabeto:
+        if letra not in cadena:
+            return False
+    return True
