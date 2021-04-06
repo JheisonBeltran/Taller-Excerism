@@ -8,26 +8,18 @@ Created on Mon Apr  5 17:49:01 2021
 # TALLER DE EXCERISM - CORTE 2
 
 
-# EJERCICIO 1 - Isogram
-# Determine si una palabra o frase es un isograma.
-def is_isogram(string):
-    """
-    El metodo indica si una palabra es un isograma o no lo es.
+# EJERCICIO 1 - Binary
+# Convierta un número binario, representado como una cadena.
+def binarizar(decimal):
+    binario = ''
+    while decimal // 2 != 0:
+        binario = str(decimal % 2) + binario
+        decimal = decimal // 2
+        return str(decimal) + binario
 
-    Parameters
-    ----------
-    string : Palabra a definir
 
-    Returns
-    Retorna un true si la palabra es un isograma o false si no lo es.
-    """
-    string = string.lower()
-    for x in range(len(string)):
-        for i in range(len(string)):
-            if x != i and string[x] == string[i] and string[x].isalpha():
-                return False
-
-    return True
+numero = int(input('Ingresar el número a convertir a número binario: '))
+print(binarizar(numero))
 
 
 # EJERCICIO 2 - Acronym
@@ -186,15 +178,39 @@ lim = raw_input("Quieres generar números primos hasta qué número: ")
                 break
 
 
-# EJERCICIO 9 - Binary
-#
-def binarizar(decimal):
-    binario = ''
-    while decimal // 2 != 0:
-        binario = str(decimal % 2) + binario
-        decimal = decimal // 2
-        return str(decimal) + binario
+# EJERCICIO 9 - Isogram
+# Determine si una palabra o frase es un isograma.
+def is_isogram(string):
+    """
+    El metodo indica si una palabra es un isograma o no lo es.
+
+    Parameters
+    ----------
+    string : Palabra a definir
+
+    Returns
+    Retorna un true si la palabra es un isograma o false si no lo es.
+    """
+    string = string.lower()
+    for x in range(len(string)):
+        for i in range(len(string)):
+            if x != i and string[x] == string[i] and string[x].isalpha():
+                return False
+
+    return True
 
 
-numero = int(input('Ingresar el número a convertir a número binario: '))
-print(binarizar(numero))
+# EJERCICIO 10 - Leap
+# Dado un año, informe si es un año bisiesto.
+def bisiesto(año):
+    if año % 4 == 0 and (año % 100 != 0 or año % 400 == 0):
+        return 'El año %d es bisiesto.' % año
+    else:
+        return 'El año %d no es bisiesto.' % año
+
+
+try:
+    año = int(raw_input('Ingresa un número de año: '))
+    print bisiesto(año)
+
+# JABT
