@@ -28,7 +28,7 @@ def two_fer(name="you"):
 # Determine si una palabra o frase es un isograma.
 def is_isogram(string):
     """
-    El Metodo indica si una palabra es un isograma o no lo es.
+    El metodo indica si una palabra es un isograma o no lo es.
 
     Parameters
     ----------
@@ -45,4 +45,46 @@ def is_isogram(string):
 
     return True
 
-# EJERCICIO 3
+
+# EJERCICIO 3 - Acronym
+# Convierte una frase en su acrónimo.
+def abbreviate(words, acronimo=""):
+    """
+    El metodo Convierte una frase a su acrónimo.
+    Parameters
+    words : Palabra a abreviar
+    Returns
+    Retorna las siglas de las iniciales de la frase ingresada
+    """
+
+    if "'" in words:
+        words = words.replace("'", "")
+    words = words.title()
+    for letras in words:
+        if letras.isalpha and letras.isupper():
+            acronimo = acronimo + letras[0].upper()
+    return acronimo
+
+
+# EJERCICIO 4 - Hamming
+# Calcula la diferencia de Hamming entre dos hebras de ADN.
+def distance(strand_a, strand_b, distancia=0):
+    """
+    El metodo calcula la distancia de Hamming de dos cadenas de ADN
+    Parameters
+    ----------
+    strand_a : cadena de adn
+    strand_b : cadena de adn
+    Returns
+    Este metodo retorna un numero el cual es la distancia de
+    hamming de las dos cadenas
+    """
+
+    if len(strand_a) != len(strand_b):
+        raise ValueError("ValueError")
+    else:
+        for x in range(len(strand_a)):
+            if strand_a[x] != strand_b[x]:
+                distancia += 1
+
+    return distancia
